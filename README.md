@@ -2,7 +2,7 @@
 
 个人博客项目，基于 Next.js 16 + TypeScript + Tailwind CSS 构建。
 
-**在线访问：** [https://tianran936.github.io](https://tianran936.github.io)
+**在线访问：** [https://tianran936.github.io](https://tianran935.github.io)
 
 ## 技术栈
 
