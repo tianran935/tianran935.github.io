@@ -42,12 +42,14 @@ export default function Home() {
                 联系我
                 <ArrowRight size={20} />
               </a>
-              <Link
-                href="/about"
+              <a
+                href="/CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white border border-zinc-300 text-[#18181B] rounded-2xl hover:bg-zinc-50 transition-colors duration-200 cursor-pointer text-lg"
               >
                 我的 CV
-              </Link>
+              </a>
             </div>
           </div>
         </div>
