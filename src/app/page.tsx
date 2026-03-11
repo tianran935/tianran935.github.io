@@ -46,7 +46,7 @@ export default function Home() {
                 href="/about"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white border border-zinc-300 text-[#18181B] rounded-2xl hover:bg-zinc-50 transition-colors duration-200 cursor-pointer text-lg"
               >
-                了解更多
+                我的 CV
               </Link>
             </div>
           </div>
