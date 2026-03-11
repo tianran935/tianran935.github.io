@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "home": "首页",
+    "blog": "博客",
+    "tags": "标签",
+    "about": "关于"
+  },
+  "blog": {
+    "readMore": "阅读更多",
+    "publishedOn": "发布于",
+    "tags": "标签",
+    "allPosts": "所有文章",
+    "noPosts": "暂无文章",
+    "backToBlog": "← 返回博客"
+  },
+  "about": {
+    "title": "关于我",
+    "description": "我是湖南大学数字经济专业的学生，专注于经济学研究、数据分析与机器学习应用。"
+  }
+}

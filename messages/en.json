@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "home": "Home",
+    "blog": "Blog",
+    "tags": "Tags",
+    "about": "About"
+  },
+  "blog": {
+    "readMore": "Read More",
+    "publishedOn": "Published on",
+    "tags": "Tags",
+    "allPosts": "All Posts",
+    "noPosts": "No posts found",
+    "backToBlog": "← Back to Blog"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I'm a student at Hunan University majoring in Digital Economy. I'm interested in economic research, data analysis, and machine learning applications."
+  }
+}

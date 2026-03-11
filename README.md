@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 天然的博客
 
-## Getting Started
+个人博客项目，基于 Next.js 16 + TypeScript + Tailwind CSS 构建。
 
-First, run the development server:
+**在线访问：** [https://tianran936.github.io](https://tianran936.github.io)
+
+## 技术栈
+
+- **框架：** Next.js 16 (App Router)
+- **语言：** TypeScript
+- **样式：** Tailwind CSS 4
+- **内容：** Markdown / Jupyter Notebook (.ipynb)
+- **部署：** GitHub Pages (静态导出)
+
+## 本地开发
 
 ```bash
+# 安装依赖
+npm install
+
+# 启动开发服务器
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# 构建静态文件
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+开发服务器启动后，访问 http://localhost:3000 预览。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 部署
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+本项目使用 GitHub Actions 自动部署到 GitHub Pages。
 
-## Learn More
+推送代码到 `main` 分支会自动触发构建和部署：
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+git add .
+git commit -m "Your message"
+git push origin main
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+GitHub Actions 会执行以下步骤：
+1. 安装 Node.js 20
+2. 安装依赖
+3. 运行 `npm run build` 生成静态文件到 `out/` 目录
+4. 自动部署到 GitHub Pages
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 文章发布
 
-## Deploy on Vercel
+1. 在 `content/posts/` 目录下创建新的 `.md` 或 `.ipynb` 文件
+2. 文件开头添加 frontmatter 元数据：
+   ```markdown
+   ---
+   title: "文章标题"
+   date: "2025-01-01"
+   excerpt: "文章摘要"
+   tags: ["标签 1", "标签 2"]
+   category: ["经济学","econometrics"]
+   language: "zh"
+   ---
+   ```
+3. 提交并推送到 GitHub，自动部署
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 图片资源放置规则
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 封面图片
+放在 `public/images/covers/` 目录，使用与文章 slug 相同的文件名：
+- `public/images/covers/双重差分法.png`
+
+### 文章内容图片
+放在 `public/images/posts/` 目录，在 Markdown 中使用绝对路径引用：
+```markdown
+![描述](/images/posts/图片名称.png)
+```
+
+### 注意事项
+
+1. **文件名规范：**
+   - 使用英文、数字、连字符（`-`）或下划线（`_`）
+   - 避免空格、星号（`*`）等特殊字符
+   - 中文文件名理论上支持，但建议优先使用英文
+
+2. **路径格式：**
+   - 必须使用以 `/` 开头的绝对路径
+   - 不要使用相对路径（如 `./images` 或 `../images`）
+
+3. **图片格式：**
+   - 推荐使用 `.png` 或 `.jpg`
+   - 封面图建议使用 `.jpg` 以减小文件大小
+
+## 目录结构
+
+```
+my-blog/
+├── content/posts/          # 博客文章（Markdown / Notebook）
+├── public/
+│   ├── images/
+│   │   ├── covers/         # 封面图片
+│   │   └── posts/          # 文章内容图片
+│   └── .nojekyll           # 禁用 Jekyll 处理
+├── src/
+│   ├── app/                # Next.js App Router 页面
+│   └── lib/                # 工具函数
+├── .github/workflows/      # GitHub Actions 配置
+│   └── deploy.yml          # Pages 部署工作流
+├── next.config.ts          # Next.js 配置（静态导出）
+└── package.json
+```
+
+## License
+
+MIT
